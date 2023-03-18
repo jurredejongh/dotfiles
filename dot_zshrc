@@ -7,6 +7,9 @@ export ZSH=$HOME/.oh-my-zsh
 # GPG fix for the "Inappropiate ioctl for device" error.
 export GPG_TTY=$(tty)
 
+# Set the AWS profile to Keyhub.
+export AWS_PROFILE=keyhub
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

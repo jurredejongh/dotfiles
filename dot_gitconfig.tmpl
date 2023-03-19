@@ -1,6 +1,9 @@
 [user]
   name = Jurre de Jongh
-  email = jurre.de.jongh@topicus.nl
+  email = ik@jur.re
+
+[includeIf "gitdir:{{ .chezmoi.homeDir }}/Topicus/"]
+  path = {{ .chezmoi.homeDir }}/Topicus/.gitconfig
 
 [commit]
   gpgsign = false

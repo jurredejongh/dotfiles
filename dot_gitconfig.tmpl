@@ -1,15 +1,19 @@
 [user]
   name = Jurre de Jongh
   email = ik@jur.re
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILLaYYlPKq13yzLlzWBmt8LfcXWrxPXUW+UXLUU7Osl+
 
 [includeIf "gitdir:{{ .chezmoi.homeDir }}/Topicus/"]
   path = {{ .chezmoi.homeDir }}/Topicus/.gitconfig
 
-[commit]
-  gpgsign = false
-
 [gpg]
-  program = /usr/local/bin/gpg
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
 
 [core]
   excludesfile = {{ .chezmoi.homeDir }}/.gitignore_global

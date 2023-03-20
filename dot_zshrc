@@ -11,7 +11,8 @@ export GPG_TTY=$(tty)
 export AWS_PROFILE=keyhub
 
 # Use 1Password as SSH Auth Socket
-export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+# export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+export SSH_AUTH_SOCK=~/.1password/agent.sock
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

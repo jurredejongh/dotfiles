@@ -1,22 +1,22 @@
 Host *
-  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  IdentityAgent "~/.1password/agent.sock"
 
 Host aws-production
-  ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %r %p ~/.ssh/topicus_rsa.pub
+  ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %r %p ~/.ssh/id_ed25519.pub
   StrictHostKeyChecking no
   User ec2-user
   ServerAliveInterval=120
   RequestTTY no
 
 Host aws-acceptance
-  ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %r %p ~/.ssh/topicus_rsa.pub
+  ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %r %p ~/.ssh/id_ed25519.pub
   StrictHostKeyChecking no
   User ec2-user
   ServerAliveInterval=120
   RequestTTY no
 
 Host aws-test
-  ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %r %p ~/.ssh/topicus_rsa.pub
+  ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %r %p ~/.ssh/id_ed25519.pub
   StrictHostKeyChecking no
   User ec2-user
   ServerAliveInterval=120

@@ -1,7 +1,7 @@
 [user]
   name = Jurre de Jongh
   email = ik@jur.re
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILLaYYlPKq13yzLlzWBmt8LfcXWrxPXUW+UXLUU7Osl+
+  signingkey = {{ (onepasswordDetailsFields "vatdg4nytmu7puy6rmnj7nuaxq").public_key.value }}
 
 [includeIf "gitdir:{{ .chezmoi.homeDir }}/Topicus/"]
   path = {{ .chezmoi.homeDir }}/Topicus/.gitconfig

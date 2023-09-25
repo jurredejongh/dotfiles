@@ -114,18 +114,23 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias aws-jgz-acc='aws-keyhub login \
+alias aws-acceptance='aws-keyhub login \
   --role-arn arn:aws:iam::599809478637:role/topicus-operator && \
   aws eks update-kubeconfig --name jgz-acceptatie'
 
-alias aws-jgz-prod='aws-keyhub login \
+alias aws-production='aws-keyhub login \
   --role-arn arn:aws:iam::838653032711:role/topicus-operator && \
   aws eks update-kubeconfig --name jgz-productie'
 
-alias aws-jgz-test='aws-keyhub login \
+alias aws-test='aws-keyhub login \
   --role-arn arn:aws:iam::634639682099:role/topicus-operator && \
   aws eks update-kubeconfig --name jgz-test'
 
-alias aws-jgz-sandbox='aws-keyhub login \
+alias aws-sandbox='aws-keyhub login \
   --role-arn arn:aws:iam::150209757395:role/topicus-administrator && \
   aws eks update-kubeconfig --name sandbox-cluster'
+
+krd () {
+  kubectl patch deployment ${1} -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
+}
+

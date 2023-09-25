@@ -1,23 +1,11 @@
 Host *
   IdentityAgent "~/.1password/agent.sock"
 
-Host aws-production
+Host aws
   ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %r %p ~/.ssh/id_ed25519.pub
   StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
   User ec2-user
   ServerAliveInterval=120
   RequestTTY no
 
-Host aws-acceptance
-  ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %r %p ~/.ssh/id_ed25519.pub
-  StrictHostKeyChecking no
-  User ec2-user
-  ServerAliveInterval=120
-  RequestTTY no
-
-Host aws-test
-  ProxyCommand ~/.ssh/aws-ssm-ec2-proxy-command.sh %r %p ~/.ssh/id_ed25519.pub
-  StrictHostKeyChecking no
-  User ec2-user
-  ServerAliveInterval=120
-  RequestTTY no

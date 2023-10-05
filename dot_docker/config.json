@@ -1,0 +1,8 @@
+{
+  "auths": {
+    "docker.cloudsmith.io": {}
+  },
+  "credsStore": "osxkeychain",
+  "currentContext": "orbstack",
+  "psFormat": "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"
+}

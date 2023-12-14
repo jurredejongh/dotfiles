@@ -1,3 +1,5 @@
+Include ~/.orbstack/ssh/config
+
 Host *
   IdentityAgent "~/.1password/agent.sock"
 
@@ -9,3 +11,6 @@ Host aws
   ServerAliveInterval=120
   RequestTTY no
 
+Host harbor
+  User root
+  HostName harbor.fortizar.com

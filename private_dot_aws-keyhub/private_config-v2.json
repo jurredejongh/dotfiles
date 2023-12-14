@@ -1,0 +1,11 @@
+{
+	"keyhub": {
+		"url": "https://keyhub.topicuszorg.nl",
+		"clientId": "1755b5f7-8b89-49b9-a61d-2f50266c077b",
+		"awsSamlClientId": "urn:tkh-clientid:urn:amazon:webservices",
+		"allowInsecureTLS": false
+	},
+	"aws": {
+		"assumeDuration": 43200
+	}
+}

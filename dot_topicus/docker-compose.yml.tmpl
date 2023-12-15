@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  testdata:
+    image: docker.io/topicusjeugdzorg/postgres-testdata:regressietestinrichting-v57-arm
+    ports:
+      - '5433:5432'
+    environment:
+      DATABASES: 'lsphub, testinstanties, testinstanties-regressietest, mijnkinddossier, mk-backend, topform-backend, topform-autorisatie'
+      TEMPLATE_USER: 'kdplus'
+      CREATE_TEMPLATES: 'true'
+      TEMPLATE_PASSWORD: '{{ (onepasswordDetailsFields "yde2strv5gwkytvnpgys55zxku").password.value }}'
+
+  aws-jgz-local:
+    image: 'quay.io/topicus_zorg/jgz_infra_misc:aws-jgz-localstack_latest_arm'
+    ports:
+      - '4566:4566'
+      - '8181:8181'
+    environment:
+      PORT_WEB_UI: '8181'
+      SQS_S3_BUCKET_NAME: sqs-bucket
+      KDPLUS_FILESTORE_S3_BUCKET_NAME: 'kdplus'
+      DEFAULT_REGION: eu-west-1
+      START_WEB: 1
+
+  schematron-validator:
+    image: docker.cloudsmith.io/topicus-healthcare/jgz/schematron:latest
+    ports:
+      - '8081:8081'
